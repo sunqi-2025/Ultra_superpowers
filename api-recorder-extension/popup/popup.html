@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Recorder</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>API Recorder</h1>
+      <div class="status-indicator" id="statusIndicator">
+        <span class="status-dot"></span>
+        <span class="status-text">已停止</span>
+      </div>
+    </header>
+
+    <div class="session-info" id="sessionInfo">
+      <span class="session-label">会话:</span>
+      <span class="session-name" id="sessionName">-</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-value" id="requestCount">0</span>
+        <span class="stat-label">请求数</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value" id="duration">00:00</span>
+        <span class="stat-label">录制时长</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn btn-primary" id="recordBtn">
+        <span class="btn-icon">⏺</span>
+        开始录制
+      </button>
+      <button class="btn btn-secondary" id="stopBtn" disabled>
+        <span class="btn-icon">⏹</span>
+        停止录制
+      </button>
+    </div>
+
+    <div class="progress-container" id="progressContainer" style="display: none;">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+
+    <div class="actions">
+      <a href="http://localhost:3001" target="_blank" class="btn btn-link">
+        打开管理界面
+      </a>
+    </div>
+
+    <footer class="footer">
+      <span class="version">v1.0.0</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
